@@ -16,6 +16,7 @@ C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliari
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\Backend.csproj.CoreCompileInputs.cache
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\Backend.sourcelink.json
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\itsmi\Desktop\Universidad\Desarrollo de portales web II\REACT\mobiliario\mobiliario\Backend\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getServicios, crearServicio, actualizarServicio } from "../../servicios/api";
+import { getServicios, crearServicio, actualizarServicio } from "../../Servicios/api";
 import Loading from "../Componentes/Loading";
 import SearchBox from "../Componentes/SearchBox";
 import ServiceCard from "../Componentes/ServiceCard";

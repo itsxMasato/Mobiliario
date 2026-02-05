@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { getMobiliario, crearMobiliario, actualizarMobiliario, eliminarMobiliario } from './servicios/api';
+import { getMobiliario, crearMobiliario, actualizarMobiliario, eliminarMobiliario } from './Servicios/api';
 
 function App() {
   const [mobiliario, setMobiliario] = useState([]);

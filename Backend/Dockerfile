@@ -1,13 +1,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copiar el proyecto usando la ruta del monorepositorio
-COPY ["backend-api.csproj", "./"]
-RUN dotnet restore "./backend-api.csproj"
+# Copiar el archivo de proyecto
+COPY ["Backend/Backend.csproj", "./"]
+RUN dotnet restore "./Backend.csproj"
 
 # Copiar todo el código y publicar
-COPY . .
-RUN dotnet publish "backend-api.csproj" -c Release -o /app/publish
+COPY Backend/ ./
+RUN dotnet publish "Backend.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
@@ -17,5 +17,5 @@ COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS=http://+:10000
 EXPOSE 10000
 
-# IMPORTANTE: Asegúrate de que el nombre sea exacto al de tu .csproj
-ENTRYPOINT ["dotnet", "backend-api.dll"]
+# Ejecutar la aplicación
+ENTRYPOINT ["dotnet", "Backend.dll"]

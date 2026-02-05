@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { getMobiliario, crearMobiliario, actualizarMobiliario } from './servicios/api';
+import { getMobiliario, crearMobiliario, actualizarMobiliario } from './Servicios/Api';
 
 function App() {
   const [mobiliario, setMobiliario] = useState([]);
@@ -13,7 +13,8 @@ function App() {
   const [form, setForm] = useState({
     codigo: '',
     nombre: '',
-    descripcion: ''
+    descripcion: '',
+    estado: 'Disponible'
   });
 
   // Cargar datos al montar
@@ -52,7 +53,7 @@ function App() {
         await crearMobiliario(form);
       }
       
-      setForm({ codigo: '', nombre: '', descripcion: '' });
+      setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Disponible' });
       await cargarMobiliario();
     } catch (err) {
       alert("Error: " + err.message);
@@ -64,19 +65,21 @@ function App() {
     setForm({
       codigo: mueble.codigo,
       nombre: mueble.nombre,
-      descripcion: mueble.descripcion
+      descripcion: mueble.descripcion,
+      estado: mueble.estado || 'Disponible'
     });
   };
 
   const handleCancelar = () => {
     setEditando(null);
-    setForm({ codigo: '', nombre: '', descripcion: '' });
+    setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Disponible' });
   };
 
   const mueblesFiltrados = mobiliario.filter(m => 
     m.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
     m.codigo.toLowerCase().includes(busqueda.toLowerCase()) ||
-    m.descripcion.toLowerCase().includes(busqueda.toLowerCase())
+    m.descripcion.toLowerCase().includes(busqueda.toLowerCase()) ||
+    (m.estado && m.estado.toLowerCase().includes(busqueda.toLowerCase()))
   );
 
   return (
@@ -114,6 +117,12 @@ function App() {
             value={form.descripcion}
             onChange={(e) => setForm({...form, descripcion: e.target.value})}
           />
+          <select value={form.estado} onChange={(e) => setForm({...form, estado: e.target.value})}>
+            <option value="Disponible">Disponible</option>
+            <option value="En uso">En uso</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Reservado">Reservado</option>
+          </select>
           <button type="submit">
             {editando ? 'Actualizar' : 'Agregar'}
           </button>
@@ -137,6 +146,7 @@ function App() {
                   <span className="badge">{mueble.codigo}</span>
                   <h3>{mueble.nombre}</h3>
                   <p>{mueble.descripcion}</p>
+                  <p className="estado">Estado: {mueble.estado || '—'}</p>
                   <div className="card-buttons">
                     <button 
                       className="btn-editar" 

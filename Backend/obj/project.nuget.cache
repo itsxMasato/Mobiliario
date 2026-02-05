@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sKgLG62+RcA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\itsmi\\Desktop\\Universidad\\Desarrollo de portales web II\\REACT\\mobiliario\\mobiliario\\Backend\\Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\itsmi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "C:\\Users\\itsmi\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

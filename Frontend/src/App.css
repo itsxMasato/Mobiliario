@@ -1,0 +1,205 @@
+/* Reset y Base */
+.App {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Mensajes de error */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+}
+
+/* Sección de Búsqueda */
+.search-section {
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+/* Formulario Horizontal */
+.add-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.add-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-form button:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancelar {
+  background-color: #6c757d !important;
+}
+
+.btn-cancelar:hover {
+  background-color: #545b62 !important;
+}
+
+/* Grid Corregido */
+.grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.no-results {
+  text-align: center;
+  color: #999;
+  grid-column: 1 / -1;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+.loading {
+  text-align: center;
+  color: #007bff;
+  padding: 40px;
+  font-size: 1.1rem;
+}
+
+/* Tarjeta */
+.furniture-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #007bff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.furniture-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.badge {
+  background: #e9ecef;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.furniture-card h3 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.furniture-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-editar,
+.btn-eliminar {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+}
+
+.btn-editar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #218838;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-form {
+    flex-direction: column;
+  }
+
+  .add-form input,
+  .add-form button {
+    width: 100%;
+  }
+
+  .grid-items {
+    grid-template-columns: 1fr;
+  }
+}

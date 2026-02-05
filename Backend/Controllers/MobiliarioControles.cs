@@ -16,8 +16,8 @@ public class MobiliarioController : ControllerBase
 {
     private static readonly List<MobiliarioDto> _data = new()
     {
-        new MobiliarioDto { Id = 1, Codigo = "MOB-001", Nombre = "Escritorio Pro", Descripcion = "Escritorio de oficina moderno", Estado = "Disponible" },
-        new MobiliarioDto { Id = 2, Codigo = "MOB-002", Nombre = "Silla Ergonómica", Descripcion = "Silla para oficina con soporte lumbar", Estado = "En uso" }
+        new MobiliarioDto { Id = 1, Codigo = "MOB-001", Nombre = "Escritorio Pro", Descripcion = "Escritorio de oficina moderno", Estado = "Activo" },
+        new MobiliarioDto { Id = 2, Codigo = "MOB-002", Nombre = "Silla Ergonómica", Descripcion = "Silla para oficina con soporte lumbar", Estado = "En mantenimiento" }
     };
 
     [HttpGet]
@@ -31,7 +31,7 @@ public class MobiliarioController : ControllerBase
             var codigo = payload.GetProperty("codigo").GetString();
             var nombre = payload.GetProperty("nombre").GetString();
             var descripcion = payload.GetProperty("descripcion").GetString();
-            var estado = payload.TryGetProperty("estado", out var e) ? e.GetString() : "Disponible";
+            var estado = payload.TryGetProperty("estado", out var e) ? e.GetString() : "Activo";
 
             if (string.IsNullOrWhiteSpace(codigo) || string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(descripcion))
                 return BadRequest("Código, nombre y descripción son requeridos");

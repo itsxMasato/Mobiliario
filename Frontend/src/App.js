@@ -14,7 +14,7 @@ function App() {
     codigo: '',
     nombre: '',
     descripcion: '',
-    estado: 'Disponible'
+    estado: 'Activo'
   });
 
   // Cargar datos al montar
@@ -53,7 +53,7 @@ function App() {
         await crearMobiliario(form);
       }
       
-      setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Disponible' });
+      setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Activo' });
       await cargarMobiliario();
     } catch (err) {
       alert("Error: " + err.message);
@@ -66,13 +66,13 @@ function App() {
       codigo: mueble.codigo,
       nombre: mueble.nombre,
       descripcion: mueble.descripcion,
-      estado: mueble.estado || 'Disponible'
+      estado: mueble.estado || 'Activo'
     });
   };
 
   const handleCancelar = () => {
     setEditando(null);
-    setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Disponible' });
+    setForm({ codigo: '', nombre: '', descripcion: '', estado: 'Activo' });
   };
 
   const mueblesFiltrados = mobiliario.filter(m => 
@@ -118,9 +118,9 @@ function App() {
             onChange={(e) => setForm({...form, descripcion: e.target.value})}
           />
           <select value={form.estado} onChange={(e) => setForm({...form, estado: e.target.value})}>
-            <option value="Disponible">Disponible</option>
+            <option value="Activo">Activo</option>
+            <option value="En mantenimiento">En mantenimiento</option>
             <option value="En uso">En uso</option>
-            <option value="Mantenimiento">Mantenimiento</option>
             <option value="Reservado">Reservado</option>
           </select>
           <button type="submit">

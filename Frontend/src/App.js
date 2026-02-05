@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { getMobiliario, crearMobiliario, actualizarMobiliario, eliminarMobiliario } from './Servicios/Api';
+import { getMobiliario, crearMobiliario, actualizarMobiliario } from './Servicios/Api';
 
 function App() {
   const [mobiliario, setMobiliario] = useState([]);
@@ -73,17 +73,6 @@ function App() {
     setForm({ codigo: '', nombre: '', descripcion: '' });
   };
 
-  const handleEliminar = async (id) => {
-    if (window.confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
-      try {
-        await eliminarMobiliario(id);
-        await cargarMobiliario();
-      } catch (err) {
-        alert("Error: " + err.message);
-      }
-    }
-  };
-
   const mueblesFiltrados = mobiliario.filter(m => 
     m.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
     m.codigo.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -154,12 +143,6 @@ function App() {
                       onClick={() => handleEditar(mueble)}
                     >
                       Editar
-                    </button>
-                    <button 
-                      className="btn-eliminar" 
-                      onClick={() => handleEliminar(mueble.id)}
-                    >
-                      Eliminar
                     </button>
                   </div>
                 </div>

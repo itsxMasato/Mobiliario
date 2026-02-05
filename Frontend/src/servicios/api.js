@@ -1,5 +1,5 @@
 // Detectar ambiente y usar URL correcta
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5090/api/mobiliario";
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5089/api/mobiliario";
 
 async function parseResponse(res) {
   if (res.status === 204) return null; // no hay cuerpo

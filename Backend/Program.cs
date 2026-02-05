@@ -21,14 +21,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontendOnly", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://localhost:5173", "https://miguel-flores.vercel.app")
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
 // Escuchar en el PORT que asigna la plataforma (Render)
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5090";
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5089";
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();

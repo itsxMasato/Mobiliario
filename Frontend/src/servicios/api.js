@@ -1,5 +1,5 @@
-// Detectar ambiente y usar URL correcta
-const BASE_URL = process.env.REACT_APP_API_URL || "https://mobiliario.onrender.com/api/mobiliario";
+// Detectar ambiente y usar URL correcta. Usar ruta relativa por defecto para desarrollo local
+const BASE_URL = process.env.REACT_APP_API_URL || "/api/mobiliario";
 
 async function parseResponse(res) {
   if (res.status === 204) return null; // no hay cuerpo
